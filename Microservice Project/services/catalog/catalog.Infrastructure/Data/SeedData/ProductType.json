@@ -1,0 +1,42 @@
+[
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12345",
+        "Name": "Shoes"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12346",
+        "Name": "Clothing"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12347",
+        "Name": "Accessories"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12348",
+        "Name": "Bags"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12349",
+        "Name": "Watches"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12350",
+        "Name": "Sportswear"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12351",
+        "Name": "Casualwear"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12352",
+        "Name": "Formalwear"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12353",
+        "Name": "Jewelry"
+    },
+    {
+        "Id": "64f1c2a1d2a4b3e7f1c12354",
+        "Name": "Perfumes"
+    }
+]

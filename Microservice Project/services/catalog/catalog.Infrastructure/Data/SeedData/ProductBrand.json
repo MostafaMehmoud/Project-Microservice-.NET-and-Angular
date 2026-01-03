@@ -1,0 +1,42 @@
+[
+    {
+        "Id": "4c4bb006342901fafe11047c",
+        "Name": "Nike"
+    },
+    {
+        "Id": "6e650be9a9a3a13f2396b6bd",
+        "Name": "Adidas"
+    },
+    {
+        "Id": "6ed7827d713a4873cd7382fc",
+        "Name": "Puma"
+    },
+    {
+        "Id": "99344a5943328cbed3440394",
+        "Name": "Reebok"
+    },
+    {
+        "Id": "73ff1f69d6f6137033e79465",
+        "Name": "Under Armour"
+    },
+    {
+        "Id": "6f8f15d32ecc6422843b25c9",
+        "Name": "Gucci"
+    },
+    {
+        "Id": "d97a7666ec63b68395165e8f",
+        "Name": "Prada"
+    },
+    {
+        "Id": "9672e671e1bff61c65e02b52",
+        "Name": "Zara"
+    },
+    {
+        "Id": "74585bb74949c6c7deb04cc6",
+        "Name": "H&M"
+    },
+    {
+        "Id": "3626413b4d4446889643b8a0",
+        "Name": "Levi's"
+    }
+]
