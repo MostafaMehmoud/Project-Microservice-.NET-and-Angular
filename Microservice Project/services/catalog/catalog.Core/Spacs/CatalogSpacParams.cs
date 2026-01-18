@@ -10,15 +10,15 @@ namespace catalog.Core.Spacs
     {
         private const int MaxPageSize = 80;
         private int _pageSize = 10;
-        public int PageIndex { get; set; } = 1;
-        public int PageSize
+        public int pageIndex { get; set; } = 1;
+        public int pageSize
         {
             get => _pageSize;
             set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
         }
-        public string? Search { get; set; }
-        public string? Sort { get; set; }
-        public string? BrandId { get; set; }
-        public string? TypeId { get; set; }
+        public string? search { get; set; }
+        public string? sort { get; set; }
+        public string? brandId { get; set; }
+        public string? typeId { get; set; }
     }
 }

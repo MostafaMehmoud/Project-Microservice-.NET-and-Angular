@@ -30,7 +30,7 @@ namespace catalog.Application.Handlers.Queries
         {
             var ProductList =await _productRepository.GetAllProducts(request.CatalogSpacParams);
             var productResponseDtoList = _mapper.Map<Pagination<ProductResponseDto>>(ProductList);
-            _logger.LogInformation("GetAllProductsQueryHandler Handled");
+            _logger.LogInformation($"GetAllProductsQueryHandler Handled With Products Count : {ProductList.Count}" );
             return productResponseDtoList;
         }
     }

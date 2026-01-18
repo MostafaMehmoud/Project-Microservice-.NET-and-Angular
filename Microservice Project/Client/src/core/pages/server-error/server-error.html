@@ -1,0 +1,17 @@
+<div class="server-error-page">
+  <div class="error-card">
+    <img src="assets/images/server-error.svg" alt="Server Error" class="error-img">
+
+    <h1>500</h1>
+    <h2>Oops! Server Error</h2>
+    <p>
+      Something went wrong on our side.  
+      Please try again later or go back to the home page.
+    </p>
+
+    <div class="actions">
+      <button routerLink="/" class="btn-primary">Go Home</button>
+      <button (click)="reload()" class="btn-outline">Try Again</button>
+    </div>
+  </div>
+</div>

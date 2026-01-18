@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-
 @Component({
   selector: 'app-nav-bar',
   imports: [CommonModule, RouterModule],

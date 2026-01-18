@@ -1,162 +1,146 @@
 ﻿[
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20001",
-        "Name": "Nike Air Zoom Pegasus",
-        "Description": "High-performance running shoes with responsive cushioning.",
-        "summary": "Lightweight and comfortable for daily runs.",
-        "ImageFile": "nike_air_zoom.jpg",
-        "Price": 120.50,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12345",
-            "Name": "Nike"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22345",
-            "Name": "Shoes"
-        }
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20001",
+    "Name": "Nike Air Zoom Pegasus",
+    "Description": "High-performance running shoes with responsive cushioning.",
+    "summary": "Lightweight and comfortable for daily runs.",
+    "ImageFile": "nike_air_zoom.jpg",
+    "Price": 120.50,
+    "brand": {
+      "Id": "4c4bb006342901fafe11047c",
+      "Name": "Nike"
     },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20002",
-        "Name": "Adidas Ultraboost",
-        "Description": "Stylish running shoes with Boost midsole technology.",
-        "summary": "Best for casual wear and sports activities.",
-        "ImageFile": "adidas_ultraboost.jpg",
-        "Price": 135.00,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12346",
-            "Name": "Adidas"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22346",
-            "Name": "Shoes"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20003",
-        "Name": "Puma Sports T-Shirt",
-        "Description": "Breathable cotton sports t-shirt.",
-        "summary": "Perfect for gym and casual wear.",
-        "ImageFile": "puma_tshirt.jpg",
-        "Price": 35.99,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12347",
-            "Name": "Puma"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22347",
-            "Name": "Clothing"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20004",
-        "Name": "Reebok Gym Bag",
-        "Description": "Durable gym bag with multiple compartments.",
-        "summary": "Spacious and easy to carry.",
-        "ImageFile": "reebok_gymbag.jpg",
-        "Price": 49.99,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12348",
-            "Name": "Reebok"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22348",
-            "Name": "Bags"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20005",
-        "Name": "Gucci Leather Wallet",
-        "Description": "Premium leather wallet with elegant design.",
-        "summary": "Luxury accessory for men.",
-        "ImageFile": "gucci_wallet.jpg",
-        "Price": 250.00,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12349",
-            "Name": "Gucci"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22349",
-            "Name": "Accessories"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20006",
-        "Name": "Prada Sunglasses",
-        "Description": "Stylish sunglasses with UV protection.",
-        "summary": "Trendy and durable.",
-        "ImageFile": "prada_sunglasses.jpg",
-        "Price": 320.00,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12350",
-            "Name": "Prada"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22350",
-            "Name": "Accessories"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20007",
-        "Name": "Zara Casual Shirt",
-        "Description": "Slim-fit casual shirt for men.",
-        "summary": "Elegant and comfortable daily wear.",
-        "ImageFile": "zara_casualshirt.jpg",
-        "Price": 45.00,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12351",
-            "Name": "Zara"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22351",
-            "Name": "Casualwear"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20008",
-        "Name": "H&M Formal Suit",
-        "Description": "Two-piece formal suit.",
-        "summary": "Ideal for business and formal occasions.",
-        "ImageFile": "hm_formalsuit.jpg",
-        "Price": 199.99,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12352",
-            "Name": "H&M"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22352",
-            "Name": "Formalwear"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20009",
-        "Name": "Levi's Jeans",
-        "Description": "Original blue jeans with classic fit.",
-        "summary": "Durable and stylish.",
-        "ImageFile": "levis_jeans.jpg",
-        "Price": 70.00,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12353",
-            "Name": "Levi's"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22353",
-            "Name": "Clothing"
-        }
-    },
-    {
-        "Id": "64f1c2a1d2a4b3e7f1c20010",
-        "Name": "Rolex Submariner",
-        "Description": "Luxury Swiss-made wristwatch.",
-        "summary": "Classic design with precision timekeeping.",
-        "ImageFile": "rolex_submariner.jpg",
-        "Price": 8500.00,
-        "brand": {
-            "Id": "64f1c2a1d2a4b3e7f1c12354",
-            "Name": "Rolex"
-        },
-        "type": {
-            "Id": "64f1c2a1d2a4b3e7f1c22354",
-            "Name": "Watches"
-        }
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12345",
+      "Name": "Shoes"
     }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20002",
+    "Name": "Adidas Ultraboost",
+    "Description": "Stylish running shoes with Boost midsole technology.",
+    "summary": "Best for casual wear and sports activities.",
+    "ImageFile": "adidas_ultraboost.jpg",
+    "Price": 135.00,
+    "brand": {
+      "Id": "6e650be9a9a3a13f2396b6bd",
+      "Name": "Adidas"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12345",
+      "Name": "Shoes"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20003",
+    "Name": "Puma Sports T-Shirt",
+    "Description": "Breathable cotton sports t-shirt.",
+    "summary": "Perfect for gym and casual wear.",
+    "ImageFile": "puma_tshirt.jpg",
+    "Price": 35.99,
+    "brand": {
+      "Id": "6ed7827d713a4873cd7382fc",
+      "Name": "Puma"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12346",
+      "Name": "Clothing"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20004",
+    "Name": "Reebok Gym Bag",
+    "Description": "Durable gym bag with multiple compartments.",
+    "summary": "Spacious and easy to carry.",
+    "ImageFile": "reebok_gymbag.jpg",
+    "Price": 49.99,
+    "brand": {
+      "Id": "99344a5943328cbed3440394",
+      "Name": "Reebok"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12348",
+      "Name": "Bags"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20005",
+    "Name": "Gucci Leather Wallet",
+    "Description": "Premium leather wallet with elegant design.",
+    "summary": "Luxury accessory for men.",
+    "ImageFile": "gucci_wallet.jpg",
+    "Price": 250.00,
+    "brand": {
+      "Id": "6f8f15d32ecc6422843b25c9",
+      "Name": "Gucci"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12347",
+      "Name": "Accessories"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20006",
+    "Name": "Prada Sunglasses",
+    "Description": "Stylish sunglasses with UV protection.",
+    "summary": "Trendy and durable.",
+    "ImageFile": "prada_sunglasses.jpg",
+    "Price": 320.00,
+    "brand": {
+      "Id": "d97a7666ec63b68395165e8f",
+      "Name": "Prada"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12347",
+      "Name": "Accessories"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20007",
+    "Name": "Zara Casual Shirt",
+    "Description": "Slim-fit casual shirt for men.",
+    "summary": "Elegant and comfortable daily wear.",
+    "ImageFile": "zara_casualshirt.jpg",
+    "Price": 45.00,
+    "brand": {
+      "Id": "9672e671e1bff61c65e02b52",
+      "Name": "Zara"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12351",
+      "Name": "Casualwear"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20008",
+    "Name": "H&M Formal Suit",
+    "Description": "Two-piece formal suit.",
+    "summary": "Ideal for business and formal occasions.",
+    "ImageFile": "hm_formalsuit.jpg",
+    "Price": 199.99,
+    "brand": {
+      "Id": "74585bb74949c6c7deb04cc6",
+      "Name": "H&M"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12352",
+      "Name": "Formalwear"
+    }
+  },
+  {
+    "Id": "64f1c2a1d2a4b3e7f1c20009",
+    "Name": "Levi's Jeans",
+    "Description": "Original blue jeans with classic fit.",
+    "summary": "Durable and stylish.",
+    "ImageFile": "levis_jeans.jpg",
+    "Price": 70.00,
+    "brand": {
+      "Id": "3626413b4d4446889643b8a0",
+      "Name": "Levi's"
+    },
+    "type": {
+      "Id": "64f1c2a1d2a4b3e7f1c12346",
+      "Name": "Clothing"
+    }
+  }
 ]

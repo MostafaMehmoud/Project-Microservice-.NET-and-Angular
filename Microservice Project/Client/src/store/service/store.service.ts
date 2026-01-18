@@ -12,25 +12,31 @@ export class StoreService {
   constructor(private http:HttpClient){
 
   }
-  getAllProducts(SpecParam:SpecParam){
-    let params=new HttpParams()
-    if(SpecParam.brandId){
-      params=params.set("BrandId",SpecParam.brandId)
+  getAllProducts(specParam: SpecParam) {
+    let params = new HttpParams();
+    params = params.append('pageIndex', specParam.pageIndex.toString());
+    params = params.append('pageSize', specParam.pageSize.toString());
 
+    if (specParam.brandId) {
+      params = params.append('brandId', specParam.brandId);
+    } 
+    if (specParam.typeId) {
+      params = params.append('typeId', specParam.typeId);
     }
-    if(SpecParam.typeId){
-      params=params.set("TypeId",SpecParam.typeId)
-    }// إضافة Pagination
-  params = params
-    .set('pageIndex', SpecParam.pageIndex?.toString() || '1')
-    .set('pageSize', SpecParam.pageSize?.toString() || '10');
+    if (specParam.search) {
+      params = params.append('search', specParam.search);
+    }
+    params = params.append('sort', specParam.sort);
+    
+  return this.http.get<IResponseDto<IProduct[]>>(this.baseUrl + 'Catalog/GetAllProducts', { params });
+}
 
-    console.log(params)
-    return this.http.get<IResponseDto<IProduct[]>>(`${this.baseUrl}Catalog/GetAllProducts`,{params})
-  }
   getAllTypes(){
     return this.http.get<ITypes[]>(`${this.baseUrl}Catalog/GetAllTypes`)
   }getAllBrands(){
     return this.http.get<IBrands[]>(`${this.baseUrl}Catalog/GetAllBrands`)
+  }
+  getProductById(id:string){
+    return this.http.get<IProduct>(`${this.baseUrl}Catalog/GetProductById/${id}`)
   }
 }

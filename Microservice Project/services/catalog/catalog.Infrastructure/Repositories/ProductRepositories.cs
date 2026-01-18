@@ -1,62 +1,82 @@
-﻿using System;
+﻿using catalog.Core.Entities;
+using catalog.Core.Entities;
+using catalog.Core.Repositories;
+using catalog.Core.Spacs;
+using catalog.Infrastructure.Data.Context;
+using DnsClient.Internal;
+using Microsoft.Extensions.Logging;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using catalog.Core.Entities;
-using catalog.Core.Repositories;
-using catalog.Infrastructure.Data.Context;
-using catalog.Core.Entities;
-
-
-using MongoDB.Driver;
-using catalog.Core.Spacs;
 
 namespace catalog.Infrastructure.Repositories
 {
     public class ProductRepositories : IProductRepository, IBrandRepository, ITypeRepository
     {
         public ICatalogContext _context { get; set; }
-        public ProductRepositories(ICatalogContext context)
+        private readonly ILogger<ProductRepositories> _logger;  
+        public ProductRepositories(ICatalogContext context,ILogger<ProductRepositories> logger)
         {
             _context = context;
+            _logger = logger;
         }
         public async Task<Product> GetProductById(string id)
         {
             return await _context.Products.Find(p => p.Id == id).FirstOrDefaultAsync();
         }
-        public async Task<Pagination<Product>> GetAllProducts(CatalogSpacParams catalogSpacParams)
+
+     
+
+public async Task<Pagination<Product>> GetAllProducts(CatalogSpacParams catalogSpecParams)
+    {
+        var builder = Builders<Product>.Filter;
+        var filter = builder.Empty;
+
+        // Search
+        if (!string.IsNullOrEmpty(catalogSpecParams.search))
         {
-            var filter = Builders<Product>.Filter.Empty;
-
-            if (!string.IsNullOrEmpty(catalogSpacParams.BrandId))
-            {
-                filter &= Builders<Product>.Filter.Eq(p => p.brand.Id, catalogSpacParams.BrandId);
-            }
-
-            if (!string.IsNullOrEmpty(catalogSpacParams.TypeId))
-            {
-                filter &= Builders<Product>.Filter.Eq(p => p.type.Id, catalogSpacParams.TypeId);
-            }
-
-            if (!string.IsNullOrEmpty(catalogSpacParams.Search))
-            {
-                var searchFilter = Builders<Product>.Filter.Regex(p => p.Name,
-                    new MongoDB.Bson.BsonRegularExpression(catalogSpacParams.Search, "i"));
-                filter &= searchFilter;
-            }
-
-            var totalItems = await _context.Products.CountDocumentsAsync(filter);
-            var data = await DataFilter(catalogSpacParams, filter);
-
-            return new Pagination<Product>(
-                catalogSpacParams.PageIndex,
-                catalogSpacParams.PageSize,
-                (int)totalItems,
-                data);
+            filter &= builder.Regex(p => p.Name,
+                new MongoDB.Bson.BsonRegularExpression(catalogSpecParams.search, "i"));
         }
 
-        public async Task<IEnumerable<Product>> GetProductsByName(string name)
+        // Brand filter - حول string لـ ObjectId
+        if (!string.IsNullOrEmpty(catalogSpecParams.brandId))
+        {
+            _logger.LogInformation($"Applying brand filter: {catalogSpecParams.brandId}");
+
+            // ✅ الحل هنا
+            var brandObjectId = ObjectId.Parse(catalogSpecParams.brandId);
+            filter &= builder.Eq("brand._id", brandObjectId);
+        }
+
+        // Type filter - نفس الحاجة
+        if (!string.IsNullOrEmpty(catalogSpecParams.typeId))
+        {
+            _logger.LogInformation($"Applying type filter: {catalogSpecParams.typeId}");
+
+            // ✅ الحل هنا
+            var typeObjectId = ObjectId.Parse(catalogSpecParams.typeId);
+            filter &= builder.Eq("type._id", typeObjectId);
+        }
+
+        var totalItems = await _context.Products.CountDocumentsAsync(filter);
+        _logger.LogInformation($"Total items found: {totalItems}");
+
+        var data = await DataFilter(catalogSpecParams, filter);
+        _logger.LogInformation($"Returned items count: {data.Count}");
+
+        return new Pagination<Product>(
+            catalogSpecParams.pageIndex,
+            catalogSpecParams.pageSize,
+            (int)totalItems,
+            data
+        );
+    }
+    public async Task<IEnumerable<Product>> GetProductsByName(string name)
         {
             return await _context.Products.Find(p => p.Name == name).ToListAsync();
         }
@@ -109,9 +129,9 @@ namespace catalog.Infrastructure.Repositories
             // Default sorting by Name
             var sortDef = Builders<Product>.Sort.Ascending("Name");
 
-            if (!string.IsNullOrEmpty(catalogSpacParams.Sort))
+            if (!string.IsNullOrEmpty(catalogSpacParams.sort))
             {
-                switch (catalogSpacParams.Sort.ToLower())
+                switch (catalogSpacParams.sort.ToLower())
                 {
                     case "priceasc":
                         sortDef = Builders<Product>.Sort.Ascending("Price");
@@ -130,8 +150,8 @@ namespace catalog.Infrastructure.Repositories
             return await _context.Products
                 .Find(filter)
                 .Sort(sortDef)
-                .Skip((catalogSpacParams.PageIndex - 1) * catalogSpacParams.PageSize)
-                .Limit(catalogSpacParams.PageSize)
+                .Skip((catalogSpacParams.pageIndex - 1) * catalogSpacParams.pageSize)
+                .Limit(catalogSpacParams.pageSize)
                 .ToListAsync();
         }
     }
